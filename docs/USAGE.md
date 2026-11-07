@@ -5,6 +5,11 @@
 安装到 ComfyUI/custom_nodes/ComfyUI-DLSS5Tool/，使用 ComfyUI 的 Python 安装缺少的
 requirements.txt 依赖后重启。插件沿用已有 Torch / CUDA。
 
+当前版本为 v0.1.0-beta.1（公测）。requirements.txt 固定版本要求 Python 3.11 或更新版本；
+实际验收为 Python 3.13。仅 Git 克隆不会安装 Python 依赖，首次安装需由支持依赖安装的工具处理，
+或使用 ComfyUI 自身的 Python 手动安装。首次 NR 获取还需联网。
+全新环境中从启动器安装到首次出图的完整流程仍待验收。
+
 Model Loader 的 render_gpu 和 dll_selection 默认保持 auto。宿主已包含；首次执行时
 下载约 102–112 MiB 的匹配 NR，校验后保存在 runtime/cache/，后续可离线复用。
 多卡优先选择受支持且专用显存最大的设备，也可手动指定显卡与 custom DLL 路径。

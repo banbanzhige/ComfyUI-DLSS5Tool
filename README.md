@@ -2,6 +2,8 @@
 
 用于 ComfyUI 的图片增强插件，支持 SDR / HDR、自动分块和保护遮罩。
 
+当前版本：**v0.1.0-beta.1（公测）**，见 [更新记录](CHANGELOG.md)。
+
 ## 安装
 
 1. 在启动器的自定义节点 Git 安装入口填写：
@@ -21,7 +23,8 @@ HDR 接线和保存方法见 [使用说明](docs/USAGE.md)。
 
 ## 兼容性
 
-当前为测试版本，已在 Windows / ComfyUI 0.44.0 / RTX 4070 SUPER 验证 SDR、HLG、PQ 和线性 HDR。
+依赖要求 Python 3.11 或更新版本；实测为 Python 3.13。
+已在 Windows / ComfyUI 0.44.0 / RTX 4070 SUPER 验证 SDR、HLG、PQ 和线性 HDR。
 RTX 30 / 50 已有自动匹配档位，仍待对应显卡实测；更多环境和大图画质也待验证。
 
 ## 许可
