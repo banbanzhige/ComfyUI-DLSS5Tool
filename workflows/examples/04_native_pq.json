@@ -1,0 +1,806 @@
+{
+  "id": "f86e1870-97f7-4c39-815c-53163254a3fe",
+  "revision": 0,
+  "last_node_id": 8,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        40,
+        80
+      ],
+      "size": [
+        300,
+        420
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "选择文件上传",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        },
+        {
+          "localized_name": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "contract.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "contract.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 2,
+      "type": "DLSS5ToolModelLoader",
+      "pos": [
+        40,
+        600
+      ],
+      "size": [
+        350,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "render_gpu",
+          "name": "render_gpu",
+          "type": "COMBO",
+          "widget": {
+            "name": "render_gpu"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dll_selection",
+          "name": "dll_selection",
+          "type": "COMBO",
+          "widget": {
+            "name": "dll_selection"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dll_path",
+          "name": "dll_path",
+          "type": "STRING",
+          "widget": {
+            "name": "dll_path"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "DLSS5_MODEL",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DLSS5ToolModelLoader"
+      },
+      "widgets_values": [
+        "auto",
+        "auto",
+        ""
+      ],
+      "widgets_values_named": {
+        "render_gpu": "auto",
+        "dll_selection": "auto",
+        "dll_path": ""
+      }
+    },
+    {
+      "id": 3,
+      "type": "DLSS5ToolEnhance",
+      "pos": [
+        800,
+        80
+      ],
+      "size": [
+        300,
+        520
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "DLSS5_MODEL",
+          "link": 1
+        },
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "localized_name": "alpha_mask",
+          "name": "alpha_mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 3
+        },
+        {
+          "localized_name": "color_info",
+          "name": "color_info",
+          "shape": 7,
+          "type": "DLSS5_COLOR_INFO",
+          "link": null
+        },
+        {
+          "localized_name": "style",
+          "name": "style",
+          "type": "COMBO",
+          "widget": {
+            "name": "style"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "intensity",
+          "name": "intensity",
+          "type": "FLOAT",
+          "widget": {
+            "name": "intensity"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "local_tone",
+          "name": "local_tone",
+          "type": "FLOAT",
+          "widget": {
+            "name": "local_tone"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "local_struct",
+          "name": "local_struct",
+          "type": "FLOAT",
+          "widget": {
+            "name": "local_struct"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "use_auto_mask",
+          "name": "use_auto_mask",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_auto_mask"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "skin_struct",
+          "name": "skin_struct",
+          "type": "FLOAT",
+          "widget": {
+            "name": "skin_struct"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "localized_name": "result",
+          "name": "result",
+          "type": "DLSS5_RESULT",
+          "links": [
+            4
+          ]
+        },
+        {
+          "localized_name": "alpha_mask",
+          "name": "alpha_mask",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DLSS5ToolEnhance"
+      },
+      "widgets_values": [
+        "default",
+        1,
+        1,
+        1,
+        true,
+        1
+      ],
+      "widgets_values_named": {
+        "style": "default",
+        "intensity": 1,
+        "local_tone": 1,
+        "local_struct": 1,
+        "use_auto_mask": true,
+        "skin_struct": 1
+      }
+    },
+    {
+      "id": 4,
+      "type": "DLSS5ToolAdjust",
+      "pos": [
+        1200,
+        80
+      ],
+      "size": [
+        340,
+        650
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "result",
+          "name": "result",
+          "type": "DLSS5_RESULT",
+          "link": 4
+        },
+        {
+          "localized_name": "protect_mask",
+          "name": "protect_mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": null
+        },
+        {
+          "localized_name": "residualMultiplier",
+          "name": "residualMultiplier",
+          "type": "FLOAT",
+          "widget": {
+            "name": "residualMultiplier"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "shadowStructureMultiplier",
+          "name": "shadowStructureMultiplier",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shadowStructureMultiplier"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "reflectionGlowMultiplier",
+          "name": "reflectionGlowMultiplier",
+          "type": "FLOAT",
+          "widget": {
+            "name": "reflectionGlowMultiplier"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "residualSaturation",
+          "name": "residualSaturation",
+          "type": "FLOAT",
+          "widget": {
+            "name": "residualSaturation"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "residualLightness",
+          "name": "residualLightness",
+          "type": "FLOAT",
+          "widget": {
+            "name": "residualLightness"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "total",
+          "name": "total",
+          "type": "FLOAT",
+          "widget": {
+            "name": "total"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "darken",
+          "name": "darken",
+          "type": "FLOAT",
+          "widget": {
+            "name": "darken"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "brighten",
+          "name": "brighten",
+          "type": "FLOAT",
+          "widget": {
+            "name": "brighten"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "color",
+          "name": "color",
+          "type": "FLOAT",
+          "widget": {
+            "name": "color"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "luminance",
+          "name": "luminance",
+          "type": "FLOAT",
+          "widget": {
+            "name": "luminance"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "output_mix",
+          "name": "output_mix",
+          "type": "FLOAT",
+          "widget": {
+            "name": "output_mix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mask_feather",
+          "name": "mask_feather",
+          "type": "INT",
+          "widget": {
+            "name": "mask_feather"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        },
+        {
+          "localized_name": "alpha_mask",
+          "name": "alpha_mask",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DLSS5ToolAdjust"
+      },
+      "widgets_values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "widgets_values_named": {
+        "residualMultiplier": 1,
+        "shadowStructureMultiplier": 1,
+        "reflectionGlowMultiplier": 1,
+        "residualSaturation": 1,
+        "residualLightness": 1,
+        "total": 1,
+        "darken": 1,
+        "brighten": 1,
+        "color": 1,
+        "luminance": 1,
+        "output_mix": 1,
+        "mask_feather": 0
+      }
+    },
+    {
+      "id": 5,
+      "type": "SaveImageAdvanced",
+      "pos": [
+        1630,
+        330
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "localized_name": "文件名前缀",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "格式",
+          "name": "format",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "位深度",
+          "name": "format.bit_depth",
+          "type": "COMBO",
+          "widget": {
+            "name": "format.bit_depth"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "输入色彩空间",
+          "name": "format.input_color_space",
+          "type": "COMBO",
+          "widget": {
+            "name": "format.input_color_space"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "hdr10_pq",
+        "exr",
+        "32-bit float",
+        "linear"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "hdr10_pq",
+        "format": "exr",
+        "format.bit_depth": "32-bit float",
+        "format.input_color_space": "linear"
+      }
+    },
+    {
+      "id": 6,
+      "type": "ImageSDRToHDR",
+      "pos": [
+        430,
+        80
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "localized_name": "算法",
+          "name": "algorithm",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "algorithm"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "target_luminance",
+          "name": "algorithm.target_luminance",
+          "type": "FLOAT",
+          "widget": {
+            "name": "algorithm.target_luminance"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageSDRToHDR"
+      },
+      "widgets_values": [
+        "lottes",
+        1000
+      ],
+      "widgets_values_named": {
+        "algorithm": "lottes",
+        "algorithm.target_luminance": 1000
+      }
+    },
+    {
+      "id": 7,
+      "type": "ImageColorSpace",
+      "pos": [
+        430,
+        300
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "COMBO",
+          "widget": {
+            "name": "source"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "destination",
+          "name": "destination",
+          "type": "COMBO",
+          "widget": {
+            "name": "destination"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageColorSpace"
+      },
+      "widgets_values": [
+        "HDR",
+        "HDR PQ"
+      ],
+      "widgets_values_named": {
+        "source": "HDR",
+        "destination": "HDR PQ"
+      }
+    },
+    {
+      "id": 8,
+      "type": "ImageColorSpace",
+      "pos": [
+        1630,
+        80
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "COMBO",
+          "widget": {
+            "name": "source"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "destination",
+          "name": "destination",
+          "type": "COMBO",
+          "widget": {
+            "name": "destination"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageColorSpace"
+      },
+      "widgets_values": [
+        "HDR PQ",
+        "linear"
+      ],
+      "widgets_values_named": {
+        "source": "HDR PQ",
+        "destination": "linear"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "DLSS5_MODEL"
+    ],
+    [
+      2,
+      7,
+      0,
+      3,
+      1,
+      "IMAGE"
+    ],
+    [
+      3,
+      1,
+      1,
+      3,
+      2,
+      "MASK"
+    ],
+    [
+      4,
+      3,
+      1,
+      4,
+      0,
+      "DLSS5_RESULT"
+    ],
+    [
+      5,
+      8,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      1,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      6,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      8,
+      4,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6593406593406593,
+      "offset": [
+        273.33333333333326,
+        396.34447530110674
+      ]
+    }
+  },
+  "version": 0.4
+}

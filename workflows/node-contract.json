@@ -1,0 +1,94 @@
+{
+  "status": "implemented; local SDR/HDR functional validation, see development record",
+  "schema_version": 2,
+  "nodes": {
+    "DLSS5ToolModelLoader": {
+      "display_name": "DLSS5 Model Loader",
+      "inputs": {
+        "render_gpu": "COMBO",
+        "dll_selection": "COMBO",
+        "dll_path": "STRING"
+      },
+      "widget_order": [
+        "render_gpu",
+        "dll_selection",
+        "dll_path"
+      ],
+      "outputs": [
+        "DLSS5_MODEL"
+      ]
+    },
+    "DLSS5ToolEnhance": {
+      "display_name": "DLSS5 Enhance",
+      "inputs": {
+        "model": "DLSS5_MODEL",
+        "image": "IMAGE",
+        "alpha_mask": "MASK",
+        "color_info": "DLSS5_COLOR_INFO",
+        "style": "COMBO",
+        "intensity": "FLOAT",
+        "local_tone": "FLOAT",
+        "local_struct": "FLOAT",
+        "use_auto_mask": "BOOLEAN",
+        "skin_struct": "FLOAT"
+      },
+      "optional": [
+        "alpha_mask",
+        "color_info"
+      ],
+      "widget_order": [
+        "style",
+        "intensity",
+        "local_tone",
+        "local_struct",
+        "use_auto_mask",
+        "skin_struct"
+      ],
+      "outputs": [
+        "IMAGE",
+        "DLSS5_RESULT",
+        "MASK"
+      ]
+    },
+    "DLSS5ToolAdjust": {
+      "display_name": "DLSS5 Adjust",
+      "inputs": {
+        "result": "DLSS5_RESULT",
+        "protect_mask": "MASK",
+        "residualMultiplier": "FLOAT",
+        "shadowStructureMultiplier": "FLOAT",
+        "reflectionGlowMultiplier": "FLOAT",
+        "residualSaturation": "FLOAT",
+        "residualLightness": "FLOAT",
+        "total": "FLOAT",
+        "darken": "FLOAT",
+        "brighten": "FLOAT",
+        "color": "FLOAT",
+        "luminance": "FLOAT",
+        "output_mix": "FLOAT",
+        "mask_feather": "INT"
+      },
+      "optional": [
+        "protect_mask"
+      ],
+      "widget_order": [
+        "residualMultiplier",
+        "shadowStructureMultiplier",
+        "reflectionGlowMultiplier",
+        "residualSaturation",
+        "residualLightness",
+        "total",
+        "darken",
+        "brighten",
+        "color",
+        "luminance",
+        "output_mix",
+        "mask_feather"
+      ],
+      "outputs": [
+        "IMAGE",
+        "MASK"
+      ]
+    }
+  }
+}

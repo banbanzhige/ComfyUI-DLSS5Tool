@@ -1,0 +1,106 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "contract.png"
+    }
+  },
+  "2": {
+    "class_type": "DLSS5ToolModelLoader",
+    "inputs": {
+      "render_gpu": "auto",
+      "dll_selection": "auto",
+      "dll_path": ""
+    }
+  },
+  "3": {
+    "class_type": "DLSS5ToolEnhance",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "image": [
+        "7",
+        0
+      ],
+      "alpha_mask": [
+        "1",
+        1
+      ],
+      "style": "default",
+      "intensity": 1,
+      "local_tone": 1,
+      "local_struct": 1,
+      "use_auto_mask": true,
+      "skin_struct": 1
+    }
+  },
+  "4": {
+    "class_type": "DLSS5ToolAdjust",
+    "inputs": {
+      "result": [
+        "3",
+        1
+      ],
+      "residualMultiplier": 1,
+      "shadowStructureMultiplier": 1,
+      "reflectionGlowMultiplier": 1,
+      "residualSaturation": 1,
+      "residualLightness": 1,
+      "total": 1,
+      "darken": 1,
+      "brighten": 1,
+      "color": 1,
+      "luminance": 1,
+      "output_mix": 1,
+      "mask_feather": 0
+    }
+  },
+  "5": {
+    "class_type": "SaveImageAdvanced",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "hdr10_pq",
+      "format": "exr",
+      "format.bit_depth": "32-bit float",
+      "format.input_color_space": "linear"
+    }
+  },
+  "6": {
+    "class_type": "ImageSDRToHDR",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "algorithm": "lottes",
+      "algorithm.target_luminance": 1000
+    }
+  },
+  "7": {
+    "class_type": "ImageColorSpace",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "source": "HDR",
+      "destination": "HDR PQ"
+    }
+  },
+  "8": {
+    "class_type": "ImageColorSpace",
+    "inputs": {
+      "image": [
+        "4",
+        0
+      ],
+      "source": "HDR PQ",
+      "destination": "linear"
+    }
+  }
+}

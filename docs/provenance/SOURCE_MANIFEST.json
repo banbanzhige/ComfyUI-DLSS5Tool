@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/banbanzhige/DLSS5Tool",
+  "source_head": "264a47bf5529be339005d822fec7271d354348e8",
+  "date": "2026-11-07",
+  "snapshot": "working-tree",
+  "reference_modules": [
+    "adapter_inventory",
+    "adapter_probe",
+    "analysis_quantization",
+    "app_settings",
+    "appearance",
+    "cuda_analysis",
+    "cuda_frame",
+    "cuda_hdr_pack",
+    "cuda_hdr_yuv",
+    "cuda_interop",
+    "cuda_nv12",
+    "cuda_p010",
+    "cuda_sdr_yuv",
+    "cuda_session",
+    "cuda_vsr",
+    "cuda_vsr_runtime",
+    "deferred_error",
+    "device_cached",
+    "device_consumers",
+    "device_memory",
+    "device_sr_plan",
+    "dlss_engine",
+    "dlss_host_process",
+    "encoding_contract",
+    "export_metrics",
+    "frame_generation",
+    "gpu_decode",
+    "gpu_export_process",
+    "gpu_export_runtime",
+    "gpu_flow",
+    "gpu_video_export",
+    "guidance_client",
+    "guidance_color",
+    "guidance_execution",
+    "guidance_flow",
+    "guidance_parameters",
+    "guidance_public",
+    "guidance_transport",
+    "guidance_visualization",
+    "host_queue",
+    "i18n",
+    "image_alpha",
+    "image_sequence",
+    "memory_budget",
+    "mod_paths",
+    "nvenc_yuv",
+    "nvofa",
+    "optical_flow_contract",
+    "packet_mux",
+    "parameter_contract",
+    "paths",
+    "performance_profiles",
+    "process_job",
+    "render_cache",
+    "resident_hdr",
+    "resident_hdr_runtime",
+    "resident_preview",
+    "resident_preview_worker",
+    "resident_sr",
+    "resident_sr_runtime",
+    "resident_sr_worker",
+    "residual_composition",
+    "shared_cache_budget",
+    "super_resolution",
+    "vfr_mux",
+    "video_export"
+  ],
+  "copied_files": [
+    {
+      "path": "reference/upstream/dlss5tool/adapter_inventory.py",
+      "source": "dlss5tool/adapter_inventory.py",
+      "sha256": "9d14adc9262e752ea9bb4a1d21c4b6dd4d20f746f9dc224a2cd52f12adb9cc6b",
+      "bytes": 6915
+    },
+    {
+      "path": "reference/upstream/dlss5tool/adapter_probe.py",
+      "source": "dlss5tool/adapter_probe.py",
+      "sha256": "f4ff543b3c4981b966f993db5c89ec70447bda111af2f298ab14fe22d08c6618",
+      "bytes": 16493
+    },
+    {
+      "path": "reference/upstream/dlss5tool/analysis_quantization.py",
+      "source": "dlss5tool/analysis_quantization.py",
+      "sha256": "a3dcb42a420b4826eb0ea7b2c1675fcf69070d73a6fe6631b9827d8ac188fc24",
+      "bytes": 3015
+    },
+    {
+      "path": "reference/upstream/dlss5tool/app_settings.py",
+      "source": "dlss5tool/app_settings.py",
+      "sha256": "11609472d5724db6517826788183a1ff7d8e297d9527b487ecfcbafa56895bbf",
+      "bytes": 15174
+    },
+    {
+      "path": "reference/upstream/dlss5tool/appearance.py",
+      "source": "dlss5tool/appearance.py",
+      "sha256": "02f38daecc5c88983488b4f088f4c3be550f84f08864c4002b82f64cf2ea3fa3",
+      "bytes": 5749
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_analysis.py",
+      "source": "dlss5tool/cuda_analysis.py",
+      "sha256": "0ba152fd459122198dc74b0233fe7d561146ff3a9edcafda3cf0aa8fc40fb053",
+      "bytes": 8231
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_frame.py",
+      "source": "dlss5tool/cuda_frame.py",
+      "sha256": "a58072c945f7f082518f9f6dc8571f3d85cd4ceedb4569f986c3b0fca35bc035",
+      "bytes": 11419
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_hdr_pack.py",
+      "source": "dlss5tool/cuda_hdr_pack.py",
+      "sha256": "20af23b07cf64e50a75d6ff5ddb4fa64966cf3b96de6a1f492de60381ebb13a6",
+      "bytes": 5449
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_hdr_yuv.py",
+      "source": "dlss5tool/cuda_hdr_yuv.py",
+      "sha256": "ddadeb728153d03e91fb01cc1517c30b56cc9e686cf0d24608b43b7b48685c8e",
+      "bytes": 6736
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_interop.py",
+      "source": "dlss5tool/cuda_interop.py",
+      "sha256": "d052d7705b20ba94773fc802fea2aee82dd8567f829d12336c81bb722b522af4",
+      "bytes": 4555
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_nv12.py",
+      "source": "dlss5tool/cuda_nv12.py",
+      "sha256": "5d8f53b9fedf83a808e7e64fe27d6736fcee0fdec13e0d665ad1d62edb0f756f",
+      "bytes": 8810
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_p010.py",
+      "source": "dlss5tool/cuda_p010.py",
+      "sha256": "41d0690d1a1c2f2ad7225f9f3319d4022eadafcd4f3de3ba77e50c1ea84d404a",
+      "bytes": 1361
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_sdr_yuv.py",
+      "source": "dlss5tool/cuda_sdr_yuv.py",
+      "sha256": "2fb4e65777ce5a4f9b625e51b034dc683f3311da3e9874b7ae24ca2ceeec9755",
+      "bytes": 6314
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_session.py",
+      "source": "dlss5tool/cuda_session.py",
+      "sha256": "06168586af1cb57c77c0dabf57c0767394651e9541ea00aa461b8e9075c758b1",
+      "bytes": 4035
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_vsr.py",
+      "source": "dlss5tool/cuda_vsr.py",
+      "sha256": "1200f8c792f1675644c2eedc7e6da6d5a9c1ca4f1320553f2a25d0bd5ae96ab4",
+      "bytes": 8912
+    },
+    {
+      "path": "reference/upstream/dlss5tool/cuda_vsr_runtime.py",
+      "source": "dlss5tool/cuda_vsr_runtime.py",
+      "sha256": "e93473c3e932ff9f8072ca95dc649af6084331dcfe52cbebcfd446ecf8433c59",
+      "bytes": 2378
+    },
+    {
+      "path": "reference/upstream/dlss5tool/deferred_error.py",
+      "source": "dlss5tool/deferred_error.py",
+      "sha256": "41d703b743d6dcaf195bea1c67eb45313769b761a1e88608a8d9f3e35cf6e77e",
+      "bytes": 1228
+    },
+    {
+      "path": "reference/upstream/dlss5tool/device_cached.py",
+      "source": "dlss5tool/device_cached.py",
+      "sha256": "cf5bedac01ae4b9cd11f534449e9259e881539ab31be67fdec5d10f5c10b0f97",
+      "bytes": 7754
+    },
+    {
+      "path": "reference/upstream/dlss5tool/device_consumers.py",
+      "source": "dlss5tool/device_consumers.py",
+      "sha256": "df069dcb66956bae33a8dd3c9d8d44e798fb6d834ac66f054b4add45f8ce3ff5",
+      "bytes": 11717
+    },
+    {
+      "path": "reference/upstream/dlss5tool/device_memory.py",
+      "source": "dlss5tool/device_memory.py",
+      "sha256": "abbf7a0092cca537d7df416b10f395d72df84fdb2b89dc8ce18abfb4b7f35b67",
+      "bytes": 2252
+    },
+    {
+      "path": "reference/upstream/dlss5tool/device_sr_plan.py",
+      "source": "dlss5tool/device_sr_plan.py",
+      "sha256": "189f11401fa6f1c5c3258346d06375ff1680379f7da89231a1a64f38e998ea6a",
+      "bytes": 2419
+    },
+    {
+      "path": "reference/upstream/dlss5tool/dlss_engine.py",
+      "source": "dlss5tool/dlss_engine.py",
+      "sha256": "837ad9d4b86511122fd1c83e52c10ec14b2ef74cc7889f984839d137e8d58ebe",
+      "bytes": 31107
+    },
+    {
+      "path": "reference/upstream/dlss5tool/dlss_host_process.py",
+      "source": "dlss5tool/dlss_host_process.py",
+      "sha256": "00445d152bb11a1bd761266ff781a7418ebf7b1e2fb70a49f695ec08d0da9564",
+      "bytes": 33312
+    },
+    {
+      "path": "reference/upstream/dlss5tool/encoding_contract.py",
+      "source": "dlss5tool/encoding_contract.py",
+      "sha256": "01c9451c573b798f8c62eaf57194c089453ce9ecee86aba3695624cc70c50cff",
+      "bytes": 2361
+    },
+    {
+      "path": "reference/upstream/dlss5tool/export_metrics.py",
+      "source": "dlss5tool/export_metrics.py",
+      "sha256": "b58abba73162a3cbb827ce3fe699a5acc7eb77f0777143352efd430a7f91e2f4",
+      "bytes": 4050
+    },
+    {
+      "path": "reference/upstream/dlss5tool/frame_generation.py",
+      "source": "dlss5tool/frame_generation.py",
+      "sha256": "aef269b3925a4156ff9b5357dcc0db3e008506ee65dd7811e8188b034cac254d",
+      "bytes": 49607
+    },
+    {
+      "path": "reference/upstream/dlss5tool/gpu_decode.py",
+      "source": "dlss5tool/gpu_decode.py",
+      "sha256": "6e3dee3ff3b719911b9d94bd0a4993184b87bbd04e4954ad3744102eb2ca5d35",
+      "bytes": 15631
+    },
+    {
+      "path": "reference/upstream/dlss5tool/gpu_export_process.py",
+      "source": "dlss5tool/gpu_export_process.py",
+      "sha256": "aefc4912a679da0f5c5bcd043e362377ab61665b702584b8f4210eaf3409b91a",
+      "bytes": 12815
+    },
+    {
+      "path": "reference/upstream/dlss5tool/gpu_export_runtime.py",
+      "source": "dlss5tool/gpu_export_runtime.py",
+      "sha256": "a230da5bc94911455560868045ea84a8edb9f0eae3021a0646955d4adf26cf3d",
+      "bytes": 5343
+    },
+    {
+      "path": "reference/upstream/dlss5tool/gpu_flow.py",
+      "source": "dlss5tool/gpu_flow.py",
+      "sha256": "52382520da96a0f2c2a5da93369e96050f1e5a58f4e59fece471a7dcf9c995e3",
+      "bytes": 9325
+    },
+    {
+      "path": "reference/upstream/dlss5tool/gpu_video_export.py",
+      "source": "dlss5tool/gpu_video_export.py",
+      "sha256": "b9dc9428d0df92f9c129057128884bda6405bba3c9a4af4a675d79bae4da48db",
+      "bytes": 8383
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_client.py",
+      "source": "dlss5tool/guidance_client.py",
+      "sha256": "c355b3fc3efd282b06ce6237f837a9ee127bfaf058d33d6cb6960edb158bb640",
+      "bytes": 20842
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_color.py",
+      "source": "dlss5tool/guidance_color.py",
+      "sha256": "416c03a5a5100c8256b16971abe9777ae57ea93af6f9fbb0ecdb2fefd449388f",
+      "bytes": 5501
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_execution.py",
+      "source": "dlss5tool/guidance_execution.py",
+      "sha256": "6a1efd745d9f5d0a848e391aac6f320cdb4b034ac4f9ab370236d3d7927be87c",
+      "bytes": 1030
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_flow.py",
+      "source": "dlss5tool/guidance_flow.py",
+      "sha256": "3e5cbc8055f2e67a0b088346d4383fd9101d9ffcb79da7bccb682e0f8eacb2d7",
+      "bytes": 1982
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_parameters.py",
+      "source": "dlss5tool/guidance_parameters.py",
+      "sha256": "4fb0ba6724a77558d7678766f1bc502b1a568be9c4c4644888fb9c10d8abfcdc",
+      "bytes": 3230
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_public.py",
+      "source": "dlss5tool/guidance_public.py",
+      "sha256": "fd7f223b53398dd6a3194e8352810ef58e569a8fedcf8347adf0ff4499677090",
+      "bytes": 1461
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_transport.py",
+      "source": "dlss5tool/guidance_transport.py",
+      "sha256": "8651f56df322282438bc0cb0d907054c322e2fea04a6d45f65249060a17f3ef9",
+      "bytes": 2865
+    },
+    {
+      "path": "reference/upstream/dlss5tool/guidance_visualization.py",
+      "source": "dlss5tool/guidance_visualization.py",
+      "sha256": "9e815632700a585a948abd2d96b880f7e0c0231f41918e614ec4eff77b2ab65e",
+      "bytes": 1423
+    },
+    {
+      "path": "reference/upstream/dlss5tool/host_queue.py",
+      "source": "dlss5tool/host_queue.py",
+      "sha256": "caa232fb96aea4b5b15d13e450cbcc7eb945a7e4e77b402fb8e3c9e4f1ed41ec",
+      "bytes": 1020
+    },
+    {
+      "path": "reference/upstream/dlss5tool/i18n.py",
+      "source": "dlss5tool/i18n.py",
+      "sha256": "093cc247d8924b2afa8d6e66ae203eaef1baec50b827848b38906fc6621b240c",
+      "bytes": 2293
+    },
+    {
+      "path": "reference/upstream/dlss5tool/image_alpha.py",
+      "source": "dlss5tool/image_alpha.py",
+      "sha256": "25869f671e91fdf00233f5e52353a26760148714396d5ceb3c9cd37c2a5c76f7",
+      "bytes": 3845
+    },
+    {
+      "path": "reference/upstream/dlss5tool/image_sequence.py",
+      "source": "dlss5tool/image_sequence.py",
+      "sha256": "78db3fc0b74f5ec65168dd77f4ae65eda7fa9191fb3a03de33fed6aa78b6c5ae",
+      "bytes": 19922
+    },
+    {
+      "path": "reference/upstream/dlss5tool/memory_budget.py",
+      "source": "dlss5tool/memory_budget.py",
+      "sha256": "61fae9283e0ca4577f5f0e9bf87a458c23ccef8a7cebd31115c2817edb6a0035",
+      "bytes": 13528
+    },
+    {
+      "path": "reference/upstream/dlss5tool/mod_paths.py",
+      "source": "dlss5tool/mod_paths.py",
+      "sha256": "eb5672c9a2da5145cb7037f8f62b9bd01f21d8de8d1893f8c1abe7d1e6924642",
+      "bytes": 9695
+    },
+    {
+      "path": "reference/upstream/dlss5tool/nvenc_yuv.py",
+      "source": "dlss5tool/nvenc_yuv.py",
+      "sha256": "f40dc5e9bffec35060cad71357a68ccbb56889786136b23e458926bdb0932b4b",
+      "bytes": 10492
+    },
+    {
+      "path": "reference/upstream/dlss5tool/nvofa.py",
+      "source": "dlss5tool/nvofa.py",
+      "sha256": "113df8d684975074cc708de70e266ee2638bf9d1a0a6a20100f46dd1327adb8d",
+      "bytes": 13293
+    },
+    {
+      "path": "reference/upstream/dlss5tool/optical_flow_contract.py",
+      "source": "dlss5tool/optical_flow_contract.py",
+      "sha256": "0e3abb89a1d432ff6cdc70b444f98a99c6638a8659f4166c1dc8caecd7e9241b",
+      "bytes": 1214
+    },
+    {
+      "path": "reference/upstream/dlss5tool/packet_mux.py",
+      "source": "dlss5tool/packet_mux.py",
+      "sha256": "b050f507c561550f315583ca198a949d25344c291e6eef946a2652cdb0b00017",
+      "bytes": 6829
+    },
+    {
+      "path": "reference/upstream/dlss5tool/parameter_contract.py",
+      "source": "dlss5tool/parameter_contract.py",
+      "sha256": "986d15ee173e06b40efe0bc68a7128ecb02a70038a157bba873c77492a67a82d",
+      "bytes": 5680
+    },
+    {
+      "path": "reference/upstream/dlss5tool/paths.py",
+      "source": "dlss5tool/paths.py",
+      "sha256": "8808c9a1ff21f59875c853984ed6e3bedd0d8f7b81652dead356cdb590c16b1c",
+      "bytes": 1340
+    },
+    {
+      "path": "reference/upstream/dlss5tool/performance_profiles.py",
+      "source": "dlss5tool/performance_profiles.py",
+      "sha256": "709327ec8fec01cfe8938602f2737cb7fe76b84d7060c0feebc3ef7437c8351a",
+      "bytes": 1401
+    },
+    {
+      "path": "reference/upstream/dlss5tool/process_job.py",
+      "source": "dlss5tool/process_job.py",
+      "sha256": "a78d97deae223dbe552efebd6d65e05844fc2df94468d077f8478f5ad19bb0b3",
+      "bytes": 5256
+    },
+    {
+      "path": "reference/upstream/dlss5tool/render_cache.py",
+      "source": "dlss5tool/render_cache.py",
+      "sha256": "6b3d02997328f81f554d626fab57b25406030587c1240c2919a3cdd1746f7228",
+      "bytes": 45659
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_hdr.py",
+      "source": "dlss5tool/resident_hdr.py",
+      "sha256": "68c60666ff15ee7365b58a5af70c89eaa94b49e195a9d6234ebd4b6be876cc41",
+      "bytes": 4933
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_hdr_runtime.py",
+      "source": "dlss5tool/resident_hdr_runtime.py",
+      "sha256": "27937bfcc0486d446c1843e9537bc80891652ed33a4ca2b790a0411d87153f62",
+      "bytes": 3249
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_preview.py",
+      "source": "dlss5tool/resident_preview.py",
+      "sha256": "03cede92b59961549cd1f678f548944be7cc1d0594006f17bd192f4d3c506baa",
+      "bytes": 10255
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_preview_worker.py",
+      "source": "dlss5tool/resident_preview_worker.py",
+      "sha256": "c6c920aca57fe72e2b5e646acfa8950d5592a03c7af351129b6ab3d007911718",
+      "bytes": 11261
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_sr.py",
+      "source": "dlss5tool/resident_sr.py",
+      "sha256": "0ebee8b3707ec7d282364118f224641109f0c318176312695237a7903b3fcca0",
+      "bytes": 14985
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_sr_runtime.py",
+      "source": "dlss5tool/resident_sr_runtime.py",
+      "sha256": "b393e604d2f78e014c0aad371ad81d2e9b63e22e4ddd9b167210e154309f9eb6",
+      "bytes": 2330
+    },
+    {
+      "path": "reference/upstream/dlss5tool/resident_sr_worker.py",
+      "source": "dlss5tool/resident_sr_worker.py",
+      "sha256": "f4f03de1a4ed5fa8ec0dd97fa33078126a7c366b7a118545ca4838cb1fc5fc19",
+      "bytes": 14984
+    },
+    {
+      "path": "reference/upstream/dlss5tool/residual_composition.py",
+      "source": "dlss5tool/residual_composition.py",
+      "sha256": "24250e8248e78a2db16a5f97f18cd380608474657996a3e27fa9c4d3caa15feb",
+      "bytes": 24717
+    },
+    {
+      "path": "reference/upstream/dlss5tool/shared_cache_budget.py",
+      "source": "dlss5tool/shared_cache_budget.py",
+      "sha256": "21361d35d1947faf08b42c75efbd4b4e46d8b51e65d15e586fecec07dfb631e3",
+      "bytes": 16916
+    },
+    {
+      "path": "reference/upstream/dlss5tool/super_resolution.py",
+      "source": "dlss5tool/super_resolution.py",
+      "sha256": "87c265035cbf069ac4ccb0b8dc103b3220379b3735802ee1b49f7d9e034a3964",
+      "bytes": 26349
+    },
+    {
+      "path": "reference/upstream/dlss5tool/vfr_mux.py",
+      "source": "dlss5tool/vfr_mux.py",
+      "sha256": "78259b1a582302b0b5ba6a78981140f1a672ceeee3eaea7221da63beb8696cb9",
+      "bytes": 2683
+    },
+    {
+      "path": "reference/upstream/dlss5tool/video_export.py",
+      "source": "dlss5tool/video_export.py",
+      "sha256": "9f49195904b43577bfca8461a8972fbccefd17ad27bc251f22656d1ff8b50d44",
+      "bytes": 49402
+    },
+    {
+      "path": "reference/upstream/dlss5tool/__init__.py",
+      "source": "dlss5tool/__init__.py",
+      "sha256": "64e1f051d653e741c07a2dbbf556cc19533c82a76de7a91179bf129d324a03f0",
+      "bytes": 150
+    },
+    {
+      "path": "reference/upstream/locales/zh_CN.json",
+      "source": "locales/zh_CN.json",
+      "sha256": "d1f87d60583da1d7a150c584a9b02ee1bd623d008cf686a2ac6aa5fa778b1a01",
+      "bytes": 128144
+    },
+    {
+      "path": "reference/upstream/locales/en_US.json",
+      "source": "locales/en_US.json",
+      "sha256": "7dfa7e874e88be001fae4e35d71a1441af2623fa4a5066c17dad84849b266883",
+      "bytes": 134172
+    },
+    {
+      "path": "reference/upstream/tests/__init__.py",
+      "source": "tests/__init__.py",
+      "sha256": "4b8b00b076a1a7512739a306c135c9cbf30cc62c95a239bf655a4846627d7fe5",
+      "bytes": 23
+    },
+    {
+      "path": "reference/upstream/tests/test_host_queue.py",
+      "source": "tests/test_host_queue.py",
+      "sha256": "8e5f13e2ec419e32f4ebbbe523e2e60af834759d9cca9114e981101219f6b9ee",
+      "bytes": 3959
+    },
+    {
+      "path": "reference/upstream/tests/test_hdr_pipeline.py",
+      "source": "tests/test_hdr_pipeline.py",
+      "sha256": "b7d2d3510e4ff1c5699714e37b29a87fd1bfd586ccbcaf66bdbff9c29b723baf",
+      "bytes": 4056
+    },
+    {
+      "path": "reference/upstream/tests/test_sdr_composition_buffers.py",
+      "source": "tests/test_sdr_composition_buffers.py",
+      "sha256": "f117269c939bfc5ff7669b20b13d46bd7aad550090f2785d26f8c673fcbac612",
+      "bytes": 2512
+    },
+    {
+      "path": "native/host_v2/build.bat",
+      "source": "native/host_v2/build.bat",
+      "sha256": "c3b805fb48696d5883b9e59df9d0d7fc1efe8e1b868fa07997c66f957ba7c424",
+      "bytes": 1990
+    },
+    {
+      "path": "native/host_v2/dlssnr_host_v2.cpp",
+      "source": "native/host_v2/dlssnr_host_v2.cpp",
+      "sha256": "e7cf5a1ae4812d4da04271a54d9f81dcb743d83a579bc9bdbb95be64b63f61c2",
+      "bytes": 70804
+    },
+    {
+      "path": "native/host_v2/gpu_flow.h",
+      "source": "native/host_v2/gpu_flow.h",
+      "sha256": "ddf1a171e86c1664fa5e0d578cac7df87e273474d1babde1f88b2ac2eb8c1f56",
+      "bytes": 8831
+    },
+    {
+      "path": "native/host_v2/guidance_upload.h",
+      "source": "native/host_v2/guidance_upload.h",
+      "sha256": "e57f9507b803bb9a622324fa53869aa8d4e65f4d6d933442ff439771c43131e6",
+      "bytes": 2369
+    },
+    {
+      "path": "native/host_v2/host_queue.h",
+      "source": "native/host_v2/host_queue.h",
+      "sha256": "423646fbec2c15043083731d2e8efb6230353a12a9371488a844a03c6c542777",
+      "bytes": 756
+    },
+    {
+      "path": "native/host_v2/tile_blend.h",
+      "source": "native/host_v2/tile_blend.h",
+      "sha256": "947b3b4bab2404c8789df408d53e2db18f0a41ed6cab7529f504e689f025644c",
+      "bytes": 3475
+    },
+    {
+      "path": "native/quality_reference/quality.cpp",
+      "source": "native/realtime/quality.cpp",
+      "sha256": "3cfb8d0ce167bef1889f0bc233e61d4af3955eaa461ca60b0999d17ae9927a1c",
+      "bytes": 6680
+    },
+    {
+      "path": "native/quality_reference/quality.h",
+      "source": "native/realtime/quality.h",
+      "sha256": "5a5cd7cc47a5b1ba41918fdae13dd0c7b42dc86f9195a8c7cb3d802b1a34599e",
+      "bytes": 3029
+    },
+    {
+      "path": "native/quality_reference/quality_bridge.cpp",
+      "source": "native/realtime/quality_bridge.cpp",
+      "sha256": "a8ad9e77fd73f9e8e7f4c2ac5eb516d82a0372f7565e5dfd1b8e3c087ce922b6",
+      "bytes": 12557
+    },
+    {
+      "path": "native/quality_reference/quality_gpu_output.cpp",
+      "source": "native/realtime/quality_gpu_output.cpp",
+      "sha256": "d56c1aeb93d4eda6d456d6a62a30257e33a7774688077e59784669c5804ed8c6",
+      "bytes": 6483
+    },
+    {
+      "path": "native/quality_reference/quality_gpu_output.h",
+      "source": "native/realtime/quality_gpu_output.h",
+      "sha256": "59ebecfd9610cad9f69684ed860309eaf1599ca4e9ec38a699b289ceea7197d0",
+      "bytes": 1687
+    },
+    {
+      "path": "native/quality_reference/telemetry.h",
+      "source": "native/realtime/telemetry.h",
+      "sha256": "9e2c1ffcc0fafc9feceadb0b8d00f500857e5a8b5ede97b9da4d2516c51303d5",
+      "bytes": 4788
+    },
+    {
+      "path": "native/quality_reference/hdr_residual.hlsli",
+      "source": "native/realtime/hdr_residual.hlsli",
+      "sha256": "1b53c140c24f61d49346128616004e5d3881afaad6a5e75062a099a923d7f141",
+      "bytes": 649
+    },
+    {
+      "path": "native/quality_reference/CMakeLists.upstream.txt",
+      "source": "native/realtime/CMakeLists.txt",
+      "sha256": "6fe277769edad8f7106b08f1e35bc30ff912ffe548f4f13316a803e3082329e8",
+      "bytes": 9511
+    },
+    {
+      "path": "reference/upstream/scripts/prepare_realtime_build.py",
+      "source": "scripts/prepare_realtime_build.py",
+      "sha256": "61e3dbf0f7bd7d5b504c1923e54fe20702a8c47eb872a1d1bcf520b39db094ba",
+      "bytes": 35368
+    },
+    {
+      "path": "LICENSE",
+      "source": "LICENSE",
+      "sha256": "e57f1c320b8cf8798a7d2ff83a6f9e06a33a03585f6e065fea97f1d86db84052",
+      "bytes": 35150
+    },
+    {
+      "path": "licenses/DLSS5Tool-original-MIT.txt",
+      "source": "licenses/DLSS5Tool-original-MIT.txt",
+      "sha256": "21f2fa22636754f3217a8b26f6a77a62a4ac77243ed7962433123994defee2cd",
+      "bytes": 1079
+    },
+    {
+      "path": "licenses/NVIDIA-Optical-Flow-Headers-LICENSE.txt",
+      "source": "licenses/NVIDIA-Optical-Flow-Headers-LICENSE.txt",
+      "sha256": "8aa992e3966c4676efa6f530ef095a17ce9ccc008dc66d0e912f9f189db46ca6",
+      "bytes": 1559
+    },
+    {
+      "path": "licenses/torchvision-LICENSE.txt",
+      "source": "licenses/torchvision-LICENSE.txt",
+      "sha256": "2b63e4f6569e0e58260881a1f7ea8b1d9802859ab3cb4b32a45cba246245c8da",
+      "bytes": 1516
+    },
+    {
+      "path": "docs/provenance/UPSTREAM_THIRD_PARTY_NOTICES.md",
+      "source": "THIRD_PARTY_NOTICES.md",
+      "sha256": "c5433fd0a06d7f192ebab0f73ce29c17371a30f51a05b62b78865672c368cf64",
+      "bytes": 8619
+    },
+    {
+      "path": "docs/provenance/UPSTREAM_REALTIME_NOTICE.md",
+      "source": "native/realtime/NOTICE.md",
+      "sha256": "3525eac7b6fa2d4550cb11d195bbc596ccd5e2264082847eaaa84fd0971d1c62",
+      "bytes": 5513
+    },
+    {
+      "path": "docs/provenance/realtime-sources.lock.json",
+      "source": "native/realtime/sources.lock.json",
+      "sha256": "3cf590485e5a28de1bbfbfe70de6c0c87a3402a42dab16df5ca83ebb3e8df505",
+      "bytes": 3446
+    },
+    {
+      "path": "docs/design/COMFYUI_NODES_V1_BOUNDARIES.md",
+      "source": "docs/design/COMFYUI_NODES_V1_BOUNDARIES.md",
+      "sha256": "f774b01cff0f25ee86da512434682a3732e1915e3aac85bddf51cf882d8e4809",
+      "bytes": 10185
+    },
+    {
+      "path": "docs/development/REPOSITORY_HYGIENE.md",
+      "source": "docs/development/REPOSITORY_HYGIENE.md",
+      "sha256": "1fd119611b46e2f9a16e0d9f97c21a4804f2de7e79bef0f67be15b59a3c1608e",
+      "bytes": 5584
+    },
+    {
+      "path": ".editorconfig",
+      "source": ".editorconfig",
+      "sha256": "28c855c38b1a9e2acfefadf12f128881f31abf0f704a5fa78c37ba15cd052b47",
+      "bytes": 326
+    },
+    {
+      "path": "docs/provenance/UPSTREAM_GITATTRIBUTES.txt",
+      "source": ".gitattributes",
+      "sha256": "c73a065525d79aa91448092de62255435bd5d2867ab26efe1a4bf98dbed48000",
+      "bytes": 563
+    },
+    {
+      "path": "docs/design/native-node-mockup.fragment.html",
+      "source": "conversation/dlss5-comfyui-native-design.html",
+      "sha256": "15cd3e046b87dc3d0ef9a4f3c5e38a42d5823a601deddf3a6ed685c44b6be948",
+      "bytes": 138669
+    },
+    {
+      "path": "docs/design/reference/native-widget-reference.png",
+      "source": "conversation/user-native-widget-reference.png",
+      "sha256": "7b6c9ea695548f410f7cce144a17ddbc7ef27402b241cf516e0566bdce0e78ef",
+      "bytes": 111281
+    }
+  ]
+}

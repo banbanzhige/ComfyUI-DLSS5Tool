@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "source": "https://github.com/banbanzhige/DLSS5Tool/releases/tag/zip",
+  "host": {
+    "path": "runtime/dlssnr_host_v2.dll",
+    "size": 295424,
+    "sha256": "c8ad631f8f78b2dedec6aec418c7a570d6fc5bf1b9ffa9f3514bcb0edd58fc13",
+    "source": "native/host_v2",
+    "license": "licenses/NVIDIA-RTX-SDK-LICENSE.txt"
+  },
+  "profiles": [
+    {
+      "id": "ampere",
+      "label": "RTX 30 / Ampere",
+      "compute_capabilities": [80, 86],
+      "url": "https://github.com/banbanzhige/DLSS5Tool/releases/download/zip/30.-310.8.SF-v2.zip",
+      "archive_size": 117898662,
+      "archive_sha256": "01626f7ffe14c54928e9b2eaa09baf1886fa9200b247bbb51895f935f301886c",
+      "member": "30系/nvngx_dlssnr.dll",
+      "dll_size": 165830144,
+      "dll_sha256": "6eb209e764f39872625debd6abaf45e2bb6322f6f270f781f70c059ae30b3927"
+    },
+    {
+      "id": "ada",
+      "label": "RTX 40 / Ada",
+      "compute_capabilities": [89],
+      "url": "https://github.com/banbanzhige/DLSS5Tool/releases/download/zip/40.zip",
+      "archive_size": 106991529,
+      "archive_sha256": "3fdeb4f3b44165bfd31d98e288a46dc16eedd40168819c8ed6f73c45fc92c7a1",
+      "member": "nvngx_dlssnr.dll",
+      "dll_size": 165840496,
+      "dll_sha256": "28bdc080d28686decdb63f6f4246b022274916b80aafdab266fe0fb63b2b9265"
+    },
+    {
+      "id": "blackwell",
+      "label": "RTX 50 / Blackwell",
+      "compute_capabilities": [120],
+      "url": "https://github.com/banbanzhige/DLSS5Tool/releases/download/zip/50.zip",
+      "archive_size": 109425424,
+      "archive_sha256": "e730e1ea95b0a4f6420b9b1bbb1c2948cbb1bc9241aebfdeb10efef8a3bc906a",
+      "member": "50系/nvngx_dlssnr.dll",
+      "dll_size": 165840496,
+      "dll_sha256": "e16bcf15e16e13f527491cdf7845b2fe6521a738d8f7c9c721866a8496e1fc8e"
+    }
+  ]
+}

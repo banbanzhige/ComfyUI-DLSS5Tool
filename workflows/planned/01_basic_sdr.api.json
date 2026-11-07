@@ -1,0 +1,70 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "replace-with-your-image.png"
+    }
+  },
+  "2": {
+    "class_type": "DLSS5ToolModelLoader",
+    "inputs": {
+      "render_gpu": "auto",
+      "dll_selection": "auto",
+      "dll_path": ""
+    }
+  },
+  "3": {
+    "class_type": "DLSS5ToolEnhance",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "image": [
+        "1",
+        0
+      ],
+      "alpha_mask": [
+        "1",
+        1
+      ],
+      "style": "default",
+      "intensity": 1.0,
+      "local_tone": 1.0,
+      "local_struct": 1.0,
+      "use_auto_mask": true,
+      "skin_struct": 1.0
+    }
+  },
+  "4": {
+    "class_type": "DLSS5ToolAdjust",
+    "inputs": {
+      "result": [
+        "3",
+        1
+      ],
+      "residualMultiplier": 1.0,
+      "shadowStructureMultiplier": 1.0,
+      "reflectionGlowMultiplier": 1.0,
+      "residualSaturation": 1.0,
+      "residualLightness": 1.0,
+      "total": 1.0,
+      "darken": 1.0,
+      "brighten": 1.0,
+      "color": 1.0,
+      "luminance": 1.0,
+      "output_mix": 1.0,
+      "mask_feather": 0
+    }
+  },
+  "5": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ],
+      "filename_prefix": "DLSS5Tool"
+    }
+  }
+}

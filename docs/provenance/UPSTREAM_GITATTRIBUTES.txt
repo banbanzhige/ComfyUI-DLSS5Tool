@@ -1,0 +1,28 @@
+* text=auto
+
+*.py  text eol=lf
+*.md  text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.cpp text eol=lf
+*.h   text eol=lf
+*.bat text eol=crlf
+*.reg text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.dll binary
+*.lib binary
+
+# Preserve the hashes of archived diagnostic evidence, including raw CRLF logs.
+docs/development/p0-upstream-comparison-20261020/** binary
+docs/development/export-performance-20261022/** binary
+docs/development/ram-coordination-20261026/** binary
+

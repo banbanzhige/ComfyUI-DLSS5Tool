@@ -1,0 +1,5 @@
+# Existing ComfyUI provides Torch. Do not install or replace Torch / CUDA.
+# These versions are the verified local image-node environment.
+numpy==2.3.5
+Pillow==12.1.0
+scipy==1.17.0

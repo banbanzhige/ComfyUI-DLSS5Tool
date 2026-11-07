@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "sources": {
+    "rapidhash": {
+      "repository": "Nicoshev/rapidhash",
+      "requested_revision": "588978411df8683777429f729be5213eb1bfd5f3",
+      "commit": "588978411df8683777429f729be5213eb1bfd5f3",
+      "archive_sha256": "59f45ac988b94a8dcf7a8a3f1976704657ebda52fc7ebe8d33f3e7d6c5123059"
+    },
+    "fmt": {
+      "repository": "fmtlib/fmt",
+      "requested_revision": "12.1.0",
+      "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+      "archive_sha256": "0470bba08d31fc470a247d03a2c278000adce19502741fdc28b39c9cad2bda57"
+    },
+    "muparser": {
+      "repository": "beltoforion/muparser",
+      "requested_revision": "v2.3.5",
+      "commit": "fbafd7f8774af2b53f4d2de07c57353fcfc09216",
+      "archive_sha256": "71299e04e312f768331e5d6fa9f5f297a4dfd9a4075b8259ad2ab8edf171cee2"
+    },
+    "nvof_headers": {
+      "repository": "SlimRG/NvidiaOF5",
+      "requested_revision": "99e8d8eb8f269591e5e4bd5a7f3c248bbbc3a3b9",
+      "commit": "99e8d8eb8f269591e5e4bd5a7f3c248bbbc3a3b9",
+      "archive_sha256": "ce27d6d56f239d1fbad68e1329ffe1fd82326ff28617cbd6a3a7f000453e7bb5"
+    },
+    "veyra": {
+      "repository": "Likely7/Veyra-NRVideo",
+      "requested_revision": "v1.4.4",
+      "commit": "6851c2775c978b999e263a9c427ff43461688aa0",
+      "archive_sha256": "00d8fb355f55ff24225da79bd172d9b68b977cfc2581d561549d03bed9313639"
+    },
+    "wil": {
+      "repository": "microsoft/wil",
+      "requested_revision": "v1.0.260126.7",
+      "commit": "cbf677fb0a942557d08fd129f4c106a76247b2ec",
+      "archive_sha256": "43f3f1913b9d640f9a1aaa1821d4087a96b52af5d1055b68378163281ab76b21"
+    },
+    "imgui": {
+      "repository": "ocornut/imgui",
+      "requested_revision": "v1.91.8",
+      "commit": "dbb5eeaadffb6a3ba6a60de1290312e5802dba5a",
+      "archive_sha256": "33944a68e4ad0d96cf3cedcd2d0fcac8ce7cc5df01e333014cad8fb9a52f7cc7"
+    },
+    "yas": {
+      "repository": "niXman/yas",
+      "requested_revision": "7.1.0",
+      "commit": "e70a6e31d32571238a73450304405670f40a4860",
+      "archive_sha256": "b424084b93a823c90064c230b5d027c596439f620cf93294484cb162034404a1"
+    },
+    "spdlog": {
+      "repository": "gabime/spdlog",
+      "requested_revision": "v1.17.0",
+      "commit": "79524ddd08a4ec981b7fea76afd08ee05f83755d",
+      "archive_sha256": "2594162a28f06d12bf38ab4388c002156db9f8d5f7bcb0e1b4e60067dbad6c76"
+    },
+    "nvapi": {
+      "repository": "NVIDIA/nvapi",
+      "requested_revision": "87dca625e83fd89a983e19b904e5f3a580da90d2",
+      "commit": "87dca625e83fd89a983e19b904e5f3a580da90d2",
+      "archive_sha256": "f40c45c4c186f038346c85afb1225971ac4db2f72c02831ad89e3e844121c528"
+    },
+    "json": {
+      "repository": "nlohmann/json",
+      "requested_revision": "v3.12.0",
+      "commit": "55f93686c01528224f448c19128836e7df245f72",
+      "archive_sha256": "0746352e4e9532e7aeabbcbaa79079b6bc6008e9261e4d459c9486a9b48a172e"
+    },
+    "magpie": {
+      "repository": "SAOG0721/Magpie",
+      "requested_revision": "2c017d4be8311fac8584e2ff6187b1f03383bde1",
+      "commit": "2c017d4be8311fac8584e2ff6187b1f03383bde1",
+      "archive_sha256": "32a0727b6868ff86441ef80635eba2dac50da6908263d57a2008fcf1b12822c4"
+    },
+    "phmap": {
+      "repository": "greg7mdp/parallel-hashmap",
+      "requested_revision": "v2.0.0",
+      "commit": "2ec799017610ef831f4dc29c21fb3cce7e4a19b9",
+      "archive_sha256": "3405fbf5d56521c9b296e93325220e16f5b0fb91cb312937f0eb4ca552eabe57"
+    }
+  }
+}

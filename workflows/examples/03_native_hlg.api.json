@@ -1,0 +1,102 @@
+{
+  "1": {
+    "inputs": {
+      "image": "contract.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "2": {
+    "inputs": {
+      "render_gpu": "auto",
+      "dll_selection": "auto",
+      "dll_path": ""
+    },
+    "class_type": "DLSS5ToolModelLoader",
+    "_meta": {
+      "title": "DLSS5 Model Loader"
+    }
+  },
+  "3": {
+    "inputs": {
+      "style": "default",
+      "intensity": 1,
+      "local_tone": 1,
+      "local_struct": 1,
+      "use_auto_mask": true,
+      "skin_struct": 1,
+      "model": [
+        "2",
+        0
+      ],
+      "image": [
+        "6",
+        0
+      ],
+      "alpha_mask": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "DLSS5ToolEnhance",
+    "_meta": {
+      "title": "DLSS5 Enhance"
+    }
+  },
+  "4": {
+    "inputs": {
+      "residualMultiplier": 1,
+      "shadowStructureMultiplier": 1,
+      "reflectionGlowMultiplier": 1,
+      "residualSaturation": 1,
+      "residualLightness": 1,
+      "total": 1,
+      "darken": 1,
+      "brighten": 1,
+      "color": 1,
+      "luminance": 1,
+      "output_mix": 1,
+      "mask_feather": 0,
+      "result": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "DLSS5ToolAdjust",
+    "_meta": {
+      "title": "DLSS5 Adjust"
+    }
+  },
+  "5": {
+    "inputs": {
+      "filename_prefix": "hdr10_hlg",
+      "format": "exr",
+      "format.bit_depth": "32-bit float",
+      "format.input_color_space": "HDR",
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "SaveImageAdvanced",
+    "_meta": {
+      "title": "保存图像（高级）"
+    }
+  },
+  "6": {
+    "inputs": {
+      "algorithm": "lottes",
+      "algorithm.target_luminance": 1000,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ImageSDRToHDR",
+    "_meta": {
+      "title": "将 SDR 转换为 HDR"
+    }
+  }
+}
