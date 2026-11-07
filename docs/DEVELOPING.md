@@ -10,7 +10,9 @@
 ~~~powershell
 python -B scripts/check_project.py
 python -B scripts/verify_handoff.py
+python -B scripts/check_versions.py
 python -B -m unittest discover -s tests -p test_runtime_setup.py
+python -B -m unittest discover -s tests -p test_versioning.py
 ~~~
 
 以上使用标准库，不下载运行库或启动 GPU。暂存修改后运行
@@ -33,3 +35,17 @@ python -B -m unittest discover -s tests -p test_runtime_setup.py
 部分交接材料只由维护者本地保留，不是运行依赖；不为消除检查失败而改写历史摘要。
 原生宿主可通过 native/host_v2/build.bat 构建，需单独准备并审阅 NVIDIA SDK 与 VS C++ 工具。
 修改随附宿主时同步源码、运行库清单和验证结果。
+
+## 版本维护
+
+- 插件版本在 dlss5tool_comfy/__init__.py，与 version.json、README、CHANGELOG 和 Git 标签保持一致。
+- 修改生产代码、工作流、DLL 或 Python 依赖时提高插件版本；公测顺序如 beta.1 → beta.2。
+  CI 会与 PR 基线 / 上一次推送比较，遗漏升级版本会失败。
+- 运行库清单使用 catalog_revision，宿主及每档 NR 各有 revision，都是本项目修订号。
+  修改 DLL / 归档身份时提高该组件修订，清单变更还须提高 catalog_revision。
+- version.json 固定 UTF-8 / LF 的运行库清单及 requirements.txt 的 SHA256；修改后同步摘要。
+  发布标签和附件不能原位替换；新 DLL 用新附件身份，旧版本继续固定原摘要。
+- 发布前运行 `python -B scripts/check_versions.py --base <上个版本标签>` 与暂存内容审计。
+  标签使用 v 加完整插件版本号，推送代码和对应标签；首次版本从未版本化基线引入清单。
+- 回退先停止 ComfyUI，切换已发布标签并重启；NR 自动复用对应的旧校验缓存。
+  Python 环境不自动回退或升级，需要另行核对该版本 requirements.txt；不修改 Torch / CUDA。

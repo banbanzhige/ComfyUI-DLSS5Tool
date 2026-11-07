@@ -169,6 +169,21 @@ class RuntimeSetupTests(unittest.TestCase):
         self.assertFalse(setup.cache_path(self.profile).exists())
         self.assertFalse(list(self.runtime.rglob(".pending-*.dll")))
 
+    def test_successful_upgrade_and_offline_rollback_preserve_old_runtime(self):
+        old_bytes = self.dll
+        with patch.object(setup, "urlopen", return_value=Response(self.archive)):
+            old = setup.ensure_runtime(self.profile)
+        self.dll = old_bytes[:-1] + b"2"
+        upgraded, archive = self.fixture()
+        upgraded["revision"] = 2
+        with patch.object(setup, "urlopen", return_value=Response(archive)):
+            new = setup.ensure_runtime(upgraded)
+        self.assertNotEqual(old.path, new.path)
+        self.assertEqual(Path(old.path).read_bytes(), old_bytes)
+        self.assertEqual(Path(new.path).read_bytes(), self.dll)
+        with patch.object(setup, "urlopen", side_effect=AssertionError("rollback must reuse the validated cache")):
+            self.assertEqual(setup.ensure_runtime(self.profile), old)
+
     def test_download_larger_than_catalog_is_rejected(self):
         response = Response(self.archive + b"extra data")
         response.headers = {}

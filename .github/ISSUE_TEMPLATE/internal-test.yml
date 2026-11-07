@@ -16,7 +16,7 @@ body:
     id: environment
     attributes:
       label: 测试环境
-      description: 填写插件版本（例如 v0.1.0-beta.1）或代码提交、Windows、GPU / 驱动、ComfyUI、Python、Torch 和 DLL 版本或摘要。
+      description: 填写插件版本或代码提交、Windows、GPU / 驱动、ComfyUI、Python、Torch 和 DLL 版本；可附 scripts/show_version.py --json 的输出。
     validations:
       required: true
   - type: textarea

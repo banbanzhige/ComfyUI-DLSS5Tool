@@ -106,9 +106,9 @@ def runtime_directory():
 def host_identity():
     # The host ships with the plugin; an external NR cache need not contain it.
     identity = identify(ROOT / "runtime" / "dlssnr_host_v2.dll")
-    import json
-    catalog_path = checked_path(Path(__file__).with_name("runtime_catalog.json"), root=ROOT)
-    spec = json.loads(catalog_path.read_text(encoding="utf-8"))["host"]
+    from ..release_info import load_release
+    _, catalog = load_release(ROOT)
+    spec = catalog["host"]
     if (identity.size, identity.sha256) != (spec["size"], spec["sha256"]):
         raise ValueError("Bundled v2 host failed verification; reinstall the plugin or update its host catalog")
     require_exports(identity, {"dlssnr_configure_format", "dlssnr_configure_tiling", "dlssnr_enumerate_adapters",

@@ -7,6 +7,7 @@
 - Model Loader、Enhance、Adjust 三个图片节点。
 - 自动识别显卡、匹配并下载固定运行库，自带 v2 宿主。
 - SDR、HLG、PQ、线性 HDR，自动分块和保护遮罩。
+- 插件、宿主与 NR 依赖版本关联，支持离线版本查询与缓存升级 / 回退。
 
 已在 Windows / ComfyUI 0.44.0 / RTX 4070 SUPER 验证。
 Python 依赖需安装，首次运行库下载需联网；RTX 30 / 50 实机、更多环境及真实照片画质仍待验收。

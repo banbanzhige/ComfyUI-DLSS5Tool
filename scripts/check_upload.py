@@ -15,6 +15,8 @@ import sys
 ROOT = Path(__file__).absolute().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from check_project import checked_path, internal_document
+sys.path.insert(0, str(ROOT))
+from dlss5tool_comfy.release_info import source_version, validate_release
 LOCAL_ROOTS = {".git", ".venv", "venv", "env", "tmp", "build", "dist", "output", "var",
                ".codex", ".agents", ".aws", ".ssh"}
 CACHES = {"__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache", ".cache"}
@@ -87,7 +89,10 @@ def audit():
         errors.append("Git index is empty")
     if errors:
         return errors, 0, 0
-    host_spec = json.loads(git("show", ":dlss5tool_comfy/backend/runtime_catalog.json"))["host"]
+    catalog_bytes = git("show", ":dlss5tool_comfy/backend/runtime_catalog.json")
+    release = json.loads(git("show", ":version.json"))
+    version = source_version(git("show", ":dlss5tool_comfy/__init__.py"))
+    host_spec = validate_release(release, catalog_bytes, git("show", ":requirements.txt"), version)["host"]
     if host_spec["path"] != "runtime/dlssnr_host_v2.dll":
         raise ValueError("Unexpected bundled host path in staged catalog")
     if not any(name == host_spec["path"] for name, _ in entries):

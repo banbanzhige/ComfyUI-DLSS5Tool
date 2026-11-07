@@ -11,11 +11,13 @@
 ~~~powershell
 git diff --cached --check
 python -B scripts/check_upload.py
+python -B scripts/check_versions.py --base origin/main
 ~~~
 
 不要提交开发环境、NR / SDK、下载缓存、内部记录、私人素材或凭证。
 runtime/dlssnr_host_v2.dll 是固定摘要的随附宿主，保留其源码和第三方通知。
 提交使用 GitHub noreply 邮箱。不要更改宿主 ComfyUI 的 Torch / CUDA。
+生产代码或依赖变更需递增插件版本；DLL 和清单变更同时递增各自修订，见开发说明。
 
 PR 说明改动、实际验证和未测范围；GPU / HDR 结论须有对应实机证据。
 保留 [LICENSE](LICENSE)、原始 MIT 声明和 [第三方许可](THIRD_PARTY_NOTICES.md)。

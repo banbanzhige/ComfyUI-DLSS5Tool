@@ -34,6 +34,10 @@ def catalog():
     value = json.loads(checked_path(CATALOG).read_text(encoding="utf-8"))
     if value.get("schema_version") != 1:
         raise ValueError("Unsupported runtime catalog version")
+    for revision in (value.get("catalog_revision"), value.get("host", {}).get("revision"),
+                     *(p.get("revision") for p in value["profiles"])):
+        if type(revision) is not int or revision < 1:
+            raise ValueError("Runtime catalog requires positive component revisions")
     ids, capabilities = set(), set()
     for profile in value["profiles"]:
         key = profile["id"]

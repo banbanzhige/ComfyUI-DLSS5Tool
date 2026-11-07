@@ -1,7 +1,10 @@
 {
   "schema_version": 1,
+  "catalog_revision": 1,
   "source": "https://github.com/banbanzhige/DLSS5Tool/releases/tag/zip",
   "host": {
+    "revision": 1,
+    "abi": 2,
     "path": "runtime/dlssnr_host_v2.dll",
     "size": 295424,
     "sha256": "c8ad631f8f78b2dedec6aec418c7a570d6fc5bf1b9ffa9f3514bcb0edd58fc13",
@@ -11,6 +14,7 @@
   "profiles": [
     {
       "id": "ampere",
+      "revision": 1,
       "label": "RTX 30 / Ampere",
       "compute_capabilities": [80, 86],
       "url": "https://github.com/banbanzhige/DLSS5Tool/releases/download/zip/30.-310.8.SF-v2.zip",
@@ -22,6 +26,7 @@
     },
     {
       "id": "ada",
+      "revision": 1,
       "label": "RTX 40 / Ada",
       "compute_capabilities": [89],
       "url": "https://github.com/banbanzhige/DLSS5Tool/releases/download/zip/40.zip",
@@ -33,6 +38,7 @@
     },
     {
       "id": "blackwell",
+      "revision": 1,
       "label": "RTX 50 / Blackwell",
       "compute_capabilities": [120],
       "url": "https://github.com/banbanzhige/DLSS5Tool/releases/download/zip/50.zip",

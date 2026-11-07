@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "plugin_version": "0.1.0-beta.1",
+  "runtime_catalog": {
+    "path": "dlss5tool_comfy/backend/runtime_catalog.json",
+    "revision": 1,
+    "sha256": "b8729a03b4d2c087389868745965304e109efbfff51c2f5e464322e349bf68b4"
+  },
+  "python_requirements": {
+    "path": "requirements.txt",
+    "sha256": "adaf43fa78e61af4ab68d38b9f15d2a8bc536fced758fef3d3de0bcab3385cb6"
+  }
+}

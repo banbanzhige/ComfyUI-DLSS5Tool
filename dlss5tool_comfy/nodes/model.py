@@ -8,6 +8,7 @@ from ..backend.paths import host_identity, runtime_choices, runtime_identity
 from ..backend.process import inventory
 from ..core.contracts import ModelConfig
 from ..backend.runtime_setup import select_adapter, profile_for, runtime_fingerprint, ensure_runtime
+from ..release_info import load_release
 
 
 _lock = threading.Lock()
@@ -72,6 +73,11 @@ class ModelLoader:
                                      lambda current, total: progress.update_absolute(current * 100 // total, 100))
         else:
             runtime = runtime_identity(dll_selection, dll_path)
-        logging.info("DLSS5 Loader: %s, SM %s; runtime %s (%s)", adapter.name,
-                     adapter.compute_capability, runtime.path, runtime.sha256)
+        release, catalog = load_release()
+        profile = next((p for p in catalog["profiles"] if p["dll_sha256"] == runtime.sha256), None)
+        runtime_label = f"{profile['id']} r{profile['revision']}" if profile else "custom"
+        logging.info("DLSS5Tool v%s | catalog r%s | host ABI %s r%s (%s) | NR %s (%s) | %s SM %s",
+                     release["plugin_version"], catalog["catalog_revision"], catalog["host"]["abi"],
+                     catalog["host"]["revision"], host.sha256[:16], runtime_label, runtime.sha256,
+                     adapter.name, adapter.compute_capability)
         return (ModelConfig(runtime, host, adapter),)

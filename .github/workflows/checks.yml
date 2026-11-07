@@ -11,6 +11,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -18,10 +20,16 @@ jobs:
         run: python -B scripts/check_project.py
       - name: Verify original reference snapshot and workflow structure
         run: python -B scripts/verify_handoff.py
+      - name: Verify release pins and version increments
+        env:
+          VERSION_BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: python -B scripts/check_versions.py
       - name: Audit tracked upload contents
         run: python -B scripts/check_upload.py
       - name: Check runtime setup contracts without downloads or GPU
         run: python -B -m unittest discover -s tests -p test_runtime_setup.py
+      - name: Check release version and dependency upgrade contracts
+        run: python -B -m unittest discover -s tests -p test_versioning.py
   reference:
     name: Selected CPU reference modules
     needs: project

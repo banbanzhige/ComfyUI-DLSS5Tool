@@ -17,6 +17,16 @@ Model Loader 的 render_gpu 和 dll_selection 默认保持 auto。宿主已包�
 下载失败可重试；确认 GitHub Release 附件可访问，并预留下载预算加 15 GiB 可用空间。
 校验不符时已有文件会保留。DLSS5TOOL_RUNTIME_DIR 可指定已有的持久 NR 缓存目录。
 
+## 版本与升级
+
+启动日志显示插件版本、运行库清单修订及宿主版本；实际执行 Loader 时记录所用 NR 修订和摘要。
+可用 ComfyUI 自己的 Python 运行 `python -B scripts/show_version.py` 查看版本，
+加 `--json` 可导出不含私人路径的反馈信息。查询不联网、不创建 GPU 会话。
+
+version.json 将插件版本绑定到 DLL 清单和 Python 依赖。更新插件并重启后，
+首次执行会按新清单校验 / 获取匹配 NR；旧缓存保留，回退到旧标签可复用其旧 NR 缓存。
+自定义 DLL 继续可用，以执行日志中的实际摘要为准；Python 依赖需按对应版本的 requirements.txt 核对。
+
 ## 节点接线
 
 Model Loader.model → Enhance.model；Load Image.IMAGE → Enhance.image；
